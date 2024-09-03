@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Show View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="TVShowViewController" id="BYZ-38-t0r" customClass="TVShowViewController" customModule="MoonzPlay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lj-V1-WGe" userLabel="Wrapper">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2nD-hf-GfW">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LZt-CT-4On">
+                                        <rect key="frame" x="171.66666666666666" y="354.66666666666669" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9SL-cX-2do"/>
+                                            <constraint firstAttribute="width" constant="50" id="zk1-oj-dpK"/>
+                                        </constraints>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2nD-hf-GfW" firstAttribute="leading" secondItem="5lj-V1-WGe" secondAttribute="leading" id="HnS-fW-Hi8"/>
+                                    <constraint firstAttribute="trailing" secondItem="2nD-hf-GfW" secondAttribute="trailing" id="OVd-tG-8GY"/>
+                                    <constraint firstAttribute="height" constant="700" id="SyR-cz-6KY"/>
+                                    <constraint firstItem="LZt-CT-4On" firstAttribute="centerX" secondItem="5lj-V1-WGe" secondAttribute="centerX" id="Z3F-nk-UNf"/>
+                                    <constraint firstItem="LZt-CT-4On" firstAttribute="centerY" secondItem="5lj-V1-WGe" secondAttribute="centerY" id="n9F-H3-lR2"/>
+                                    <constraint firstAttribute="bottom" secondItem="2nD-hf-GfW" secondAttribute="bottom" id="qbW-kC-Ixr"/>
+                                    <constraint firstItem="2nD-hf-GfW" firstAttribute="top" secondItem="5lj-V1-WGe" secondAttribute="top" id="v11-Ou-fDy"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SyR-cz-6KY"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5lj-V1-WGe" secondAttribute="trailing" id="4pG-Rg-LOa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5lj-V1-WGe" secondAttribute="bottom" id="CJl-w6-kQN"/>
+                            <constraint firstItem="5lj-V1-WGe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UdQ-Fi-Le9"/>
+                            <constraint firstItem="5lj-V1-WGe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YvB-aL-uLt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loader" destination="LZt-CT-4On" id="xFP-nu-dbB"/>
+                        <outlet property="tableView" destination="2nD-hf-GfW" id="Af4-ql-dcK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.84732824427481" y="4.9295774647887329"/>
+        </scene>
+    </scenes>
+</document>
