@@ -9,6 +9,8 @@ import XCTest
 
 final class MoonzPlayUITests: XCTestCase {
 
+    var app: XCUIApplication!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -21,21 +23,18 @@ final class MoonzPlayUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    func testNormalLaunch_whenTheAppIsLaunched_HomeScreenDisplayCorrectly() throws {
+        app = XCUIApplication()
+        app.launchArguments = [UITestingConstants.LaunchArguments.enableUITesting.rawValue]
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        let titleLabel = app.staticTexts["Friends"].waitForExistence(timeout: 1.0)
+        let playButton = app.buttons["Play"].waitForExistence(timeout: 1.0)
+        let readMoreButton = app.buttons["Read More"].waitForExistence(timeout: 1.0)
+        
+        XCTAssertTrue(titleLabel)
+        XCTAssertTrue(playButton)
+        XCTAssertTrue(readMoreButton)
     }
 }

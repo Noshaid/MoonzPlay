@@ -27,7 +27,7 @@ struct Episode: Codable {
 
     enum CodingKeys: String, CodingKey {
 
-        case id = "id"
+        case id
         case name = "name"
         case overview = "overview"
         case vote_average = "vote_average"

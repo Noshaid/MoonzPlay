@@ -15,9 +15,7 @@ class DownloadManager {
     static let shared = DownloadManager()
     private let videoURL = _SAMPLE_VIDEO_URL
     
-    private init() {
-    
-    }
+    private init() {}
     
     func downloadAndSaveVideo() {
         let url = URL(string: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4")!

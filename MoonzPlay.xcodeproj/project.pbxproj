@@ -19,7 +19,6 @@
 		F8964E5F2C81FE4B00AB07D9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F8964E5E2C81FE4B00AB07D9 /* Base */; };
 		F8964E6A2C81FE4C00AB07D9 /* MoonzPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8964E692C81FE4C00AB07D9 /* MoonzPlayTests.swift */; };
 		F8964E742C81FE4C00AB07D9 /* MoonzPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8964E732C81FE4C00AB07D9 /* MoonzPlayUITests.swift */; };
-		F8964E762C81FE4C00AB07D9 /* MoonzPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8964E752C81FE4C00AB07D9 /* MoonzPlayUITestsLaunchTests.swift */; };
 		F8964E892C820D4B00AB07D9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F8964E882C820D4B00AB07D9 /* SDWebImage */; };
 		F8964E8B2C820D4B00AB07D9 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F8964E8A2C820D4B00AB07D9 /* SDWebImageMapKit */; };
 		F8964E8E2C820DCD00AB07D9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F8964E8D2C820DCD00AB07D9 /* SwiftyJSON */; };
@@ -39,6 +38,12 @@
 		F8F35B712C8670AA00DC99F8 /* MPNetworkPacakage in Frameworks */ = {isa = PBXBuildFile; productRef = F8F35B702C8670AA00DC99F8 /* MPNetworkPacakage */; };
 		F8F35B772C8670EE00DC99F8 /* MPNetworkPacakage in Frameworks */ = {isa = PBXBuildFile; productRef = F8F35B762C8670EE00DC99F8 /* MPNetworkPacakage */; };
 		F8F35BB92C87935000DC99F8 /* MPNetworkPacakage in Frameworks */ = {isa = PBXBuildFile; productRef = F8F35BB82C87935000DC99F8 /* MPNetworkPacakage */; };
+		F8F35BBD2C87A1AD00DC99F8 /* TVShowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F35BBC2C87A1AD00DC99F8 /* TVShowViewModelTests.swift */; };
+		F8F35BC02C87B61300DC99F8 /* UITestingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F35BBF2C87B61300DC99F8 /* UITestingConstants.swift */; };
+		F8F35BC12C87B61C00DC99F8 /* UITestingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F35BBF2C87B61300DC99F8 /* UITestingConstants.swift */; };
+		F8F35BC22C87B61C00DC99F8 /* UITestingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F35BBF2C87B61300DC99F8 /* UITestingConstants.swift */; };
+		F8F35BC42C87B78700DC99F8 /* MockTVShowNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F35BC32C87B78700DC99F8 /* MockTVShowNetworkService.swift */; };
+		F8F35BC72C87B99400DC99F8 /* MockTVShowNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F35BC32C87B78700DC99F8 /* MockTVShowNetworkService.swift */; };
 		F8F86D4F2C8489D20094D92B /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F86D4E2C8489D20094D92B /* EpisodeCell.swift */; };
 		F8F86D512C8489DC0094D92B /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F86D502C8489DC0094D92B /* EpisodeCell.xib */; };
 /* End PBXBuildFile section */
@@ -76,7 +81,6 @@
 		F8964E692C81FE4C00AB07D9 /* MoonzPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonzPlayTests.swift; sourceTree = "<group>"; };
 		F8964E6F2C81FE4C00AB07D9 /* MoonzPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonzPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8964E732C81FE4C00AB07D9 /* MoonzPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonzPlayUITests.swift; sourceTree = "<group>"; };
-		F8964E752C81FE4C00AB07D9 /* MoonzPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonzPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F8964EBE2C8272EC00AB07D9 /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
 		F8964EC02C82730300AB07D9 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		F8964EC22C82730A00AB07D9 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -90,6 +94,9 @@
 		F8D6BE842C85FBBB00CB4CEC /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		F8D6BE872C865FC100CB4CEC /* TVShowNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowNetworkService.swift; sourceTree = "<group>"; };
 		F8D6BE892C86605600CB4CEC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F8F35BBC2C87A1AD00DC99F8 /* TVShowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewModelTests.swift; sourceTree = "<group>"; };
+		F8F35BBF2C87B61300DC99F8 /* UITestingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingConstants.swift; sourceTree = "<group>"; };
+		F8F35BC32C87B78700DC99F8 /* MockTVShowNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTVShowNetworkService.swift; sourceTree = "<group>"; };
 		F8F86D4E2C8489D20094D92B /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		F8F86D502C8489DC0094D92B /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				F8964E692C81FE4C00AB07D9 /* MoonzPlayTests.swift */,
+				F8F35BBC2C87A1AD00DC99F8 /* TVShowViewModelTests.swift */,
+				F8F35BC32C87B78700DC99F8 /* MockTVShowNetworkService.swift */,
 			);
 			path = MoonzPlayTests;
 			sourceTree = "<group>";
@@ -187,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				F8964E732C81FE4C00AB07D9 /* MoonzPlayUITests.swift */,
-				F8964E752C81FE4C00AB07D9 /* MoonzPlayUITestsLaunchTests.swift */,
+				F8F35BBF2C87B61300DC99F8 /* UITestingConstants.swift */,
 			);
 			path = MoonzPlayUITests;
 			sourceTree = "<group>";
@@ -441,11 +450,13 @@
 				F8262E5F2C83F4E300BF904E /* Utilis.swift in Sources */,
 				F8D6BE8A2C86605600CB4CEC /* NetworkError.swift in Sources */,
 				F8D6BE832C85E12500CB4CEC /* DownloadManager.swift in Sources */,
+				F8F35BC72C87B99400DC99F8 /* MockTVShowNetworkService.swift in Sources */,
 				F8964EC12C82730300AB07D9 /* Season.swift in Sources */,
 				F8964EBF2C8272EC00AB07D9 /* TVShow.swift in Sources */,
 				F8964E552C81FE4900AB07D9 /* SceneDelegate.swift in Sources */,
 				F8D6BE882C865FC100CB4CEC /* TVShowNetworkService.swift in Sources */,
 				F8D6BE7A2C8511D500CB4CEC /* SeasonsCollectionViewCell.swift in Sources */,
+				F8F35BC12C87B61C00DC99F8 /* UITestingConstants.swift in Sources */,
 				F8964ECC2C82793200AB07D9 /* Constants.swift in Sources */,
 				F8F86D4F2C8489D20094D92B /* EpisodeCell.swift in Sources */,
 				F87F1C4A2C84AB9400B15E55 /* HeaderView.swift in Sources */,
@@ -457,6 +468,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8964E6A2C81FE4C00AB07D9 /* MoonzPlayTests.swift in Sources */,
+				F8F35BC42C87B78700DC99F8 /* MockTVShowNetworkService.swift in Sources */,
+				F8F35BBD2C87A1AD00DC99F8 /* TVShowViewModelTests.swift in Sources */,
+				F8F35BC22C87B61C00DC99F8 /* UITestingConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8964E762C81FE4C00AB07D9 /* MoonzPlayUITestsLaunchTests.swift in Sources */,
+				F8F35BC02C87B61300DC99F8 /* UITestingConstants.swift in Sources */,
 				F8964E742C81FE4C00AB07D9 /* MoonzPlayUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,7 +714,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HAT7B5F4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "coeus-solutions.MoonzPlayTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -720,7 +734,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HAT7B5F4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "coeus-solutions.MoonzPlayTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -739,6 +753,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HAT7B5F4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "coeus-solutions.MoonzPlayUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -757,6 +772,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HAT7B5F4UQ;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "coeus-solutions.MoonzPlayUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -829,8 +845,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Noshaid/MPNetworkPackage";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -22,7 +22,7 @@ protocol TVShowViewModelProtocol {
 
 class TVShowViewModel: TVShowViewModelProtocol {
     
-    let tvShowNetworkService: TVShowNetworkService
+    let tvShowNetworkService: TVShowNetworkServiceProtocol
     var onDataUpdated: (() -> Void)?
     
     var tvShow: TVShow?
@@ -31,7 +31,7 @@ class TVShowViewModel: TVShowViewModelProtocol {
     
     var currentSelectedSeason = 1
     
-    init(tvShowNetworkService: TVShowNetworkService, onDataUpdated: (() -> Void)? = nil, tvShow: TVShow? = nil, season: Season? = nil, episode: Episode? = nil, currentSelectedSeason: Int = 1) {
+    init(tvShowNetworkService: TVShowNetworkServiceProtocol, onDataUpdated: (() -> Void)? = nil, tvShow: TVShow? = nil, season: Season? = nil, episode: Episode? = nil, currentSelectedSeason: Int = 1) {
         self.tvShowNetworkService = tvShowNetworkService
         self.onDataUpdated = onDataUpdated
         self.tvShow = tvShow
@@ -54,11 +54,10 @@ class TVShowViewModel: TVShowViewModelProtocol {
         tvShowNetworkService.fetchSeason(tvShowID: tvShowID, seasonNumber: seasonNumber) { [weak self] season in
             self?.season = season
             self?.onDataUpdated?()
-            self?.fetchEpisode(tvShowID: _TV_SHOW_ID, seasonNumber: 1, episodeNumber: 1)
+            //self?.fetchEpisode(tvShowID: _TV_SHOW_ID, seasonNumber: 1, episodeNumber: 1)
         } onFailure: { error in
             print(error)
         }
-
     }
     
     func fetchEpisode(tvShowID: Int, seasonNumber: Int, episodeNumber: Int) {
@@ -68,7 +67,6 @@ class TVShowViewModel: TVShowViewModelProtocol {
         } onFailure: { error in
             print(error)
         }
-
     }
     
     func updateSelectedSeason(seasonNumber: Int) {

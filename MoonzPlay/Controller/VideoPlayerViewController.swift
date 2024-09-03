@@ -11,7 +11,7 @@ import AVFoundation
 
 class VideoPlayerViewController: UIViewController {
     
-    var videoURL: URL?
+    private var videoURL: URL?
 
     init(videoURL: URL? = nil) {
         super.init(nibName: nil, bundle: nil)
@@ -26,10 +26,8 @@ class VideoPlayerViewController: UIViewController {
         super.viewDidLoad()
 
         guard let videoURL = videoURL else { return }
-        
 
         let player = AVPlayer(url: videoURL)
-        
         let playerVC = AVPlayerViewController()
         playerVC.player = player
         

@@ -9,41 +9,20 @@ import Foundation
 import Alamofire
 import MPNetworkPacakage
 
-//protocol NetowkService {
-//    //var networkManager: NetworkManagerProtocol { get }
-//}
+protocol TVShowNetworkServiceProtocol {
+    
+    func fetchTVShow(tvShowID: Int, onSuccess: @escaping ((TVShow) -> Void), onFailure: @escaping ((AFError) -> Void))
+    func fetchSeason(tvShowID: Int, seasonNumber: Int, onSuccess: @escaping ((Season) -> Void), onFailure: @escaping ((AFError) -> Void))
+    func fetchEpisodes(tvShowID: Int, seasonNumber: Int, episodeNumber: Int, onSuccess: @escaping ((Episode) -> Void), onFailure: @escaping ((AFError) -> Void))
+}
 
-//class MockNetworkManager: NetworkManagerProtocol {
-//    
-//    func makeCall<T>(withUrl url: URL, completion: @escaping (Result<T, Alamofire.AFError>) -> Void) where T : Decodable, T : Encodable {
-//        completion(.success(TVShow()))
-//    }
-//}
-
-final class TVShowNetworkService {
+final class TVShowNetworkService: TVShowNetworkServiceProtocol {
     
     let networkManager: NetworkManagerProtocol
 
     init(networkManager: NetworkManagerProtocol) {
         self.networkManager = networkManager
     }
-
-//    func fetchCurrencyData(function: AppConstants.FunctionType, currencyCode: AppConstants.DigitalCurrencyCode, marketCode: AppConstants.MarketCode, onSuccess: @escaping ((DigitalCurrencyDTO) -> Void), onFailure: @escaping ((NetworkError) -> Void) ) {
-//        let queryParams: QueryParams = ["function": function.rawValue, "symbol": currencyCode.rawValue, "market": marketCode.rawValue, "apikey": AppConstants.ApiConstants.apiKey.rawValue]
-//        let currencyEndpoint = HiEndpoint.query(queryParams: queryParams)
-//        self.networkManager.makeCall(withEndPoint: currencyEndpoint)
-//            .sink(receiveCompletion: { completion in
-//                switch completion {
-//                case .failure(let err):
-//                    onFailure(err)
-//                case .finished:
-//                    break
-//                }
-//            }, receiveValue: { (currencyDTO: DigitalCurrencyDTO) in
-//                onSuccess(currencyDTO)
-//            })
-//            .store(in: &cancellables)
-//    }
     
     func fetchTVShow(tvShowID: Int, onSuccess: @escaping ((TVShow) -> Void), onFailure: @escaping ((AFError) -> Void)) {
         let url = "\(_BASE_URL)/tv/\(tvShowID)?api_key=\(_API_KEY)"

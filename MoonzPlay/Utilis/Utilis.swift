@@ -25,7 +25,6 @@ import UIKit
     }
 }
 
-
 extension UIColor {
     static let backgroundColor = UIColor(red: 26/255.0, green: 26/255.0, blue: 28/255.0, alpha: 1.0);
     static let greyTextColor = UIColor(red: 181/255.0, green: 183/255.0, blue: 189/255.0, alpha: 1.0);

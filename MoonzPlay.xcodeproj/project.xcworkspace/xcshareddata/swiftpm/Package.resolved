@@ -1,5 +1,5 @@
 {
-  "originHash" : "0fc0e9a7cfc01c2522ea98535fb59d49934f6ec2113102eb864a7b9bbecaef8d",
+  "originHash" : "3224b8c32b4c1cc254b65c41dcd313b205462e3817bb7e6e6f7c0abf2b23a1df",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Noshaid/MPNetworkPackage",
       "state" : {
-        "branch" : "main",
-        "revision" : "3e078bcc11c53d69aed2820509b63c8e6aa882dd"
+        "revision" : "3e078bcc11c53d69aed2820509b63c8e6aa882dd",
+        "version" : "1.0.0"
       }
     },
     {

@@ -11,9 +11,9 @@ class TVShowViewController: UIViewController {
 
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
-    let refreshControl = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
     
-    var tvShowViewModel: TVShowViewModelProtocol
+    private var tvShowViewModel: TVShowViewModelProtocol
     private static let storyboardIdentifier = "TVShowViewController"
 
     // MARK: Initializations
@@ -60,18 +60,15 @@ class TVShowViewController: UIViewController {
     private func setupBindings() {
         // Bind the view model to update UI when data updates
         tvShowViewModel.onDataUpdated = { [weak self] in
-            DispatchQueue.main.async {
-                self?.updateUI()
-
-            }
+            self?.updateUI()
         }
     }
     
-    func resetData() {
+    private func resetData() {
         tvShowViewModel.fetchTVShow(tvShowID: _TV_SHOW_ID)
     }
     
-    func updateUI() {
+    private func updateUI() {
         loader.isHidden = true
         tableView.isHidden = false
         tableView.reloadData()
@@ -86,7 +83,7 @@ class TVShowViewController: UIViewController {
         }
     }
     
-    func showVideoPlayerViewController() {
+    private func showVideoPlayerViewController() {
         let url = URL(string: _SAMPLE_VIDEO_URL)
         let videoPlayerVC = VideoPlayerViewController(videoURL: url)
         self.present(videoPlayerVC, animated: true, completion: nil)

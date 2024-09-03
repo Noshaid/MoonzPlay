@@ -12,25 +12,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        //guard let _ = (scene as? UIWindowScene) else { return }
         
         window = UIWindow()
         window?.windowScene = scene as? UIWindowScene
         let networkManager: NetworkManagerProtocol = NetworkManager()
-        /*if CommandLine.arguments.contains(UITestingConstants.LaunchArguments.mockHomeNetworkService.rawValue) {
-            networkManager = MockNetworkManager()
-        }*/
+        var tvShowNetworkService: TVShowNetworkServiceProtocol = TVShowNetworkService(networkManager: networkManager)
         
-        let tvShowNetworkService = TVShowNetworkService(networkManager: networkManager)
+        if CommandLine.arguments.contains(UITestingConstants.LaunchArguments.enableUITesting.rawValue) {
+            tvShowNetworkService = MockTVShowNetworkService()
+        }
         
         let tvShowViewModel = TVShowViewModel(tvShowNetworkService: tvShowNetworkService)
         let tvShowVC = TVShowViewController.createTVShowViewController(tvShowViewModel: tvShowViewModel)
-        window?.rootViewController = tvShowVC//UINavigationController(rootViewController: tvShowVC)
+        window?.rootViewController = tvShowVC
         window?.makeKeyAndVisible()
     }
 

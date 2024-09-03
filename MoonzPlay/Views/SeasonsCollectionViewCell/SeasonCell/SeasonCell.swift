@@ -17,7 +17,6 @@ class SeasonCell: UICollectionViewCell {
         didSet {
             title.text = "SEASON \(seasonNumber ?? 0)"
             separator.isHidden = seasonNumber == 1
-            
         }
     }
     
