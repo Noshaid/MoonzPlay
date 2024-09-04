@@ -31,7 +31,7 @@ final class TVShowViewModelTests: XCTestCase {
     
     func testFetchTVShow_WhenAPIisCalled_ShouldUpdateData() {
         // Arrange
-        let mockTVShow = TVShow(id: 1, name: "MyTVShow", backdrop_path: "backdrop path", overview: "this is overview", firstAirDate: "12-12-2020", genres: nil, number_of_seasons: 0, seasons: nil)
+        let mockTVShow = TVShow(id: 1, name: "MyTVShow", backdrop_path: "backdrop path", overview: "this is overview", first_air_date: "12-12-2020", genres: nil, number_of_seasons: 0, seasons: nil)
         
         let mockNetworkService = MockTVShowNetworkService(mockTVShow: mockTVShow)
         sut = .init(tvShowNetworkService: mockNetworkService)
@@ -54,7 +54,7 @@ final class TVShowViewModelTests: XCTestCase {
     
     func testFetchTVShow_WhenAPIisCalled_ShouldCallSeasonAPI() {
         // Arrange
-        let mockTVShow = TVShow(id: 1, name: "MyTVShow", backdrop_path: "backdrop path", overview: "this is overview", firstAirDate: "12-12-2020", genres: nil, number_of_seasons: 0, seasons: nil)
+        let mockTVShow = TVShow(id: 1, name: "MyTVShow", backdrop_path: "backdrop path", overview: "this is overview", first_air_date: "12-12-2020", genres: nil, number_of_seasons: 0, seasons: nil)
         
         let mockSeason = Season(air_date: nil, id: nil, _id: nil, name: "My Season", overview: nil, poster_path: nil, season_number: nil, vote_average: nil, episodes: nil)
         

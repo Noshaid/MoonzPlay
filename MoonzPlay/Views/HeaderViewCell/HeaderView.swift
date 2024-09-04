@@ -29,7 +29,7 @@ class HeaderView: UITableViewCell {
     
     func setData(tvShow: TVShow?) {
         nameLbl.text = "\(tvShow?.name ?? "Season Name")"
-        shortInfoLbl.text = "\(tvShow?.firstAirDate ?? "")  |  \(tvShow?.number_of_seasons ?? 0) Seasons  |  R"
+        shortInfoLbl.text = "\(tvShow?.first_air_date ?? "")  |  \(tvShow?.number_of_seasons ?? 0) Seasons  |  R"
         descriptionLbl.text = "\(tvShow?.overview ?? "")"
         setDescriptionUI()
         

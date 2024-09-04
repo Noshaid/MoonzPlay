@@ -14,7 +14,7 @@ class MockTVShowNetworkService: TVShowNetworkServiceProtocol {
     let mockTVShow: TVShow
     let mockSeason: Season
     
-    static let emptyMockTVShow = TVShow(id: nil, name: "Friends", backdrop_path: nil, overview: nil, firstAirDate: nil, genres: nil, number_of_seasons: nil, seasons: nil)
+    static let emptyMockTVShow = TVShow(id: nil, name: "Friends", backdrop_path: nil, overview: nil, first_air_date: nil, genres: nil, number_of_seasons: nil, seasons: nil)
     
     static let emptyMockSeason = Season(air_date: nil, id: nil, _id: nil, name: nil, overview: nil, poster_path: nil, season_number: nil, vote_average: nil, episodes: nil)
     

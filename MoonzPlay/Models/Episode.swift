@@ -27,19 +27,19 @@ struct Episode: Codable {
 
     enum CodingKeys: String, CodingKey {
 
+        case air_date
+        case crew
+        case episode_number
+        case name
+        case overview
         case id
-        case name = "name"
-        case overview = "overview"
-        case vote_average = "vote_average"
-        case vote_count = "vote_count"
-        case air_date = "air_date"
-        case episode_number = "episode_number"
-        case production_code = "production_code"
-        case runtime = "runtime"
-        case season_number = "season_number"
-        case still_path = "still_path"
-        case crew = "crew"
-        case guest_stars = "guest_stars"
+        case production_code
+        case runtime
+        case season_number
+        case still_path
+        case vote_average
+        case vote_count
+        case guest_stars
     }
 }
 
@@ -60,17 +60,17 @@ struct Crew: Codable {
 
     enum CodingKeys: String, CodingKey {
 
-        case job = "job"
-        case department = "department"
-        case credit_id = "credit_id"
-        case adult = "adult"
-        case gender = "gender"
-        case id = "id"
-        case known_for_department = "known_for_department"
-        case name = "name"
-        case original_name = "original_name"
-        case popularity = "popularity"
-        case profile_path = "profile_path"
+        case job
+        case department
+        case credit_id
+        case adult
+        case gender
+        case id
+        case known_for_department
+        case name
+        case original_name
+        case popularity
+        case profile_path
     }
 }
 
@@ -90,16 +90,16 @@ struct GuestStars: Codable {
 
     enum CodingKeys: String, CodingKey {
 
-        case character = "character"
-        case credit_id = "credit_id"
-        case order = "order"
-        case adult = "adult"
-        case gender = "gender"
-        case id = "id"
-        case known_for_department = "known_for_department"
-        case name = "name"
-        case original_name = "original_name"
-        case popularity = "popularity"
-        case profile_path = "profile_path"
+        case character
+        case credit_id
+        case order
+        case adult
+        case gender
+        case id
+        case known_for_department
+        case name
+        case original_name
+        case popularity
+        case profile_path
     }
 }
