@@ -35,9 +35,7 @@ class HeaderView: UITableViewCell {
         
         if let backdropPath = tvShow?.backdrop_path {
             let posterURL = URL(string: "\(_IMAGE_BASE_URL)\(backdropPath)")
-            backDropImgView.sd_setImage(with: posterURL, placeholderImage: UIImage(named: "tv_bg"))
-        } else {
-            backDropImgView.image = UIImage(named: "tv_bg")
+            backDropImgView.sd_setImage(with: posterURL)
         }
     }
 

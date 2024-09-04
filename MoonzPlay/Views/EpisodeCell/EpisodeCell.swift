@@ -21,9 +21,7 @@ class EpisodeCell: UITableViewCell {
         titleLbl.text = "E\(episode?.episode_number ?? 0) - \(episode?.name ?? "")"
         if let stillPath = episode?.still_path {
             let thumbnailUrlURL = URL(string: "\(_IMAGE_BASE_URL)\(stillPath)")
-            thumbnailImgView.sd_setImage(with: thumbnailUrlURL, placeholderImage: UIImage(named: "episode"))
-        } else {
-            thumbnailImgView.image = UIImage(named: "episode")
+            thumbnailImgView.sd_setImage(with: thumbnailUrlURL)
         }
     }
     

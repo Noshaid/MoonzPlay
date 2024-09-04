@@ -17,8 +17,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0l-9l-ekM" userLabel="Wrapper">
                     <rect key="frame" x="0.0" y="0.0" width="506" height="639"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tv_bg" translatesAutoresizingMaskIntoConstraints="NO" id="myF-KR-E7Y">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="myF-KR-E7Y">
                             <rect key="frame" x="0.0" y="0.0" width="506" height="284.66666666666669"/>
+                            <color key="backgroundColor" red="0.1019607843" green="0.10980392160000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="1fK-cq-cy3"/>
                                 <constraint firstAttribute="width" secondItem="myF-KR-E7Y" secondAttribute="height" multiplier="16:9" id="Xeg-Vz-2Nt"/>
@@ -378,7 +379,6 @@
         <image name="thumbs-down" width="16" height="16"/>
         <image name="thumbs-up" width="16" height="16"/>
         <image name="trailer" width="22.5" height="22.5"/>
-        <image name="tv_bg" width="960" height="540"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
