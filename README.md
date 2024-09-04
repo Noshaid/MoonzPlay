@@ -9,6 +9,7 @@ MoonzPlay is a simple iOS application that fetches and displays details of a TV 
 - View a list of episodes for each season
 - Caching and image handling using SDWebImage
 - Networking handled by Alamofire and MPNetworkPackage
+- Download video to your gallery (right now from default URL)
 
 ## Tech Stack
 
