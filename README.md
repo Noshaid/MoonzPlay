@@ -40,3 +40,5 @@ cd MoonzPlay
 
 - Install dependencies: Open the `MoonzPlay.xcodeproj` in Xcode and let it resolve package dependencies.
 - Run project
+
+![Simulator Screenshot - iPhone 15 Pro - 2024-09-04 at 18 22 11](https://github.com/user-attachments/assets/8b9b3eb8-dbdc-4967-ab94-bc25583690cb)
