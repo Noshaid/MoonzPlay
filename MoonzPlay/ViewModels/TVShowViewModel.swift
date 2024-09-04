@@ -8,11 +8,14 @@
 import Foundation
 
 protocol TVShowViewModelProtocol {
-    var onDataUpdated: (() -> Void)? { get set }
+    
     var tvShow: TVShow? { get }
     var season: Season? { get }
     var episode: Episode? { get }
     var currentSelectedSeason: Int { get set }
+    var onDataUpdated: (() -> Void)? { get set }
+    var connectivityService: ConnectivityService? { get set }
+
     
     func fetchTVShow(tvShowID: Int)
     func fetchSeason(tvShowID: Int, seasonNumber: Int)
@@ -22,6 +25,7 @@ protocol TVShowViewModelProtocol {
 
 class TVShowViewModel: TVShowViewModelProtocol {
     
+    var connectivityService: ConnectivityService?
     let tvShowNetworkService: TVShowNetworkServiceProtocol
     var onDataUpdated: (() -> Void)?
     
@@ -31,13 +35,16 @@ class TVShowViewModel: TVShowViewModelProtocol {
     
     var currentSelectedSeason = 1
     
-    init(tvShowNetworkService: TVShowNetworkServiceProtocol, onDataUpdated: (() -> Void)? = nil, tvShow: TVShow? = nil, season: Season? = nil, episode: Episode? = nil, currentSelectedSeason: Int = 1) {
+    init(tvShowNetworkService: TVShowNetworkServiceProtocol, onDataUpdated: (() -> Void)? = nil, tvShow: TVShow? = nil, season: Season? = nil, episode: Episode? = nil, currentSelectedSeason: Int = 1, connectivityService: ConnectivityService? = nil) {
         self.tvShowNetworkService = tvShowNetworkService
         self.onDataUpdated = onDataUpdated
         self.tvShow = tvShow
         self.season = season
         self.episode = episode
         self.currentSelectedSeason = currentSelectedSeason
+        self.connectivityService = connectivityService
+        
+        setupBindings()
     }
     
     func fetchTVShow(tvShowID: Int) {
@@ -71,6 +78,14 @@ class TVShowViewModel: TVShowViewModelProtocol {
     
     func updateSelectedSeason(seasonNumber: Int) {
         currentSelectedSeason = seasonNumber
+    }
+    
+    func setupBindings() {
+        connectivityService?.connectionStatusChanged = { [weak self] isConnected in
+            if isConnected {
+                self?.fetchTVShow(tvShowID: _TV_SHOW_ID)
+            }
+        }
     }
     
 }

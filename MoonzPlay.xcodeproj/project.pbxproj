@@ -46,6 +46,7 @@
 		F8F35BC72C87B99400DC99F8 /* MockTVShowNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F35BC32C87B78700DC99F8 /* MockTVShowNetworkService.swift */; };
 		F8F86D4F2C8489D20094D92B /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F86D4E2C8489D20094D92B /* EpisodeCell.swift */; };
 		F8F86D512C8489DC0094D92B /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F86D502C8489DC0094D92B /* EpisodeCell.xib */; };
+		F8F94E5E2C88763A00A19A80 /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F94E5D2C88763A00A19A80 /* ConnectivityService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		F8F35BC32C87B78700DC99F8 /* MockTVShowNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTVShowNetworkService.swift; sourceTree = "<group>"; };
 		F8F86D4E2C8489D20094D92B /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		F8F86D502C8489DC0094D92B /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
+		F8F94E5D2C88763A00A19A80 /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				F8D6BE872C865FC100CB4CEC /* TVShowNetworkService.swift */,
+				F8F94E5D2C88763A00A19A80 /* ConnectivityService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				F8F35BC72C87B99400DC99F8 /* MockTVShowNetworkService.swift in Sources */,
 				F8964EC12C82730300AB07D9 /* Season.swift in Sources */,
 				F8964EBF2C8272EC00AB07D9 /* TVShow.swift in Sources */,
+				F8F94E5E2C88763A00A19A80 /* ConnectivityService.swift in Sources */,
 				F8964E552C81FE4900AB07D9 /* SceneDelegate.swift in Sources */,
 				F8D6BE882C865FC100CB4CEC /* TVShowNetworkService.swift in Sources */,
 				F8D6BE7A2C8511D500CB4CEC /* SeasonsCollectionViewCell.swift in Sources */,

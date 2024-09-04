@@ -23,7 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             tvShowNetworkService = MockTVShowNetworkService()
         }
         
-        let tvShowViewModel = TVShowViewModel(tvShowNetworkService: tvShowNetworkService)
+        let connectivityService = ConnectivityService()
+        let tvShowViewModel = TVShowViewModel(tvShowNetworkService: tvShowNetworkService, connectivityService: connectivityService)
         let tvShowVC = TVShowViewController.createTVShowViewController(tvShowViewModel: tvShowViewModel)
         window?.rootViewController = tvShowVC
         window?.makeKeyAndVisible()
