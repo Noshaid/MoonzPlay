@@ -76,6 +76,9 @@
                                 <action selector="dowloadVideoAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="gep-pV-sUp"/>
                             </connections>
                         </button>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="C3K-kE-WvZ">
+                            <rect key="frame" x="444" y="50" width="20" height="20"/>
+                        </activityIndicatorView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWf-5j-thq">
                             <rect key="frame" x="0.0" y="118" width="479" height="2"/>
                             <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,19 +89,23 @@
                     </subviews>
                     <color key="backgroundColor" red="0.15686274509803921" green="0.15294117647058825" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="C3K-kE-WvZ" firstAttribute="width" secondItem="75V-rZ-Gqn" secondAttribute="width" multiplier="0.666667" id="2PK-LI-qV9"/>
                         <constraint firstItem="5tt-kj-9Ja" firstAttribute="leading" secondItem="1XQ-zF-l8a" secondAttribute="trailing" constant="5" id="6a8-b5-FQK"/>
                         <constraint firstItem="1XQ-zF-l8a" firstAttribute="leading" secondItem="75c-Oj-k1i" secondAttribute="leading" id="8Aj-OP-kDC"/>
                         <constraint firstItem="sWf-5j-thq" firstAttribute="leading" secondItem="75c-Oj-k1i" secondAttribute="leading" id="8z0-jV-1fb"/>
                         <constraint firstItem="5tt-kj-9Ja" firstAttribute="centerY" secondItem="75c-Oj-k1i" secondAttribute="centerY" id="DBC-Br-kQ5"/>
                         <constraint firstAttribute="trailing" secondItem="75V-rZ-Gqn" secondAttribute="trailing" constant="10" id="FtG-qw-ZRb"/>
+                        <constraint firstItem="C3K-kE-WvZ" firstAttribute="centerY" secondItem="75V-rZ-Gqn" secondAttribute="centerY" id="HRA-31-Awh"/>
                         <constraint firstAttribute="bottom" secondItem="sWf-5j-thq" secondAttribute="bottom" id="L7f-eM-AKp"/>
                         <constraint firstItem="3Qn-r4-3Rw" firstAttribute="leading" secondItem="5tt-kj-9Ja" secondAttribute="trailing" constant="10" id="XkZ-tT-Ngy"/>
                         <constraint firstAttribute="trailing" secondItem="sWf-5j-thq" secondAttribute="trailing" id="arr-G6-HeT"/>
                         <constraint firstItem="1XQ-zF-l8a" firstAttribute="centerY" secondItem="75c-Oj-k1i" secondAttribute="centerY" id="iEs-Mk-ocE"/>
+                        <constraint firstItem="C3K-kE-WvZ" firstAttribute="centerX" secondItem="75V-rZ-Gqn" secondAttribute="centerX" id="maM-UK-4Cs"/>
                         <constraint firstItem="3Qn-r4-3Rw" firstAttribute="top" secondItem="75c-Oj-k1i" secondAttribute="top" id="mrX-iU-Iwc"/>
                         <constraint firstItem="75V-rZ-Gqn" firstAttribute="centerY" secondItem="75c-Oj-k1i" secondAttribute="centerY" id="qbc-0G-Pxv"/>
                         <constraint firstAttribute="bottom" secondItem="3Qn-r4-3Rw" secondAttribute="bottom" id="rm9-kx-dVl"/>
                         <constraint firstItem="75V-rZ-Gqn" firstAttribute="leading" secondItem="3Qn-r4-3Rw" secondAttribute="trailing" constant="10" id="tcy-De-nKr"/>
+                        <constraint firstItem="C3K-kE-WvZ" firstAttribute="height" secondItem="75V-rZ-Gqn" secondAttribute="height" multiplier="0.666667" id="vnv-or-Yzj"/>
                     </constraints>
                 </view>
             </subviews>
@@ -112,6 +119,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="downloadBtn" destination="75V-rZ-Gqn" id="U8d-yK-EUf"/>
+                <outlet property="downloadLoader" destination="C3K-kE-WvZ" id="MIg-oP-umH"/>
                 <outlet property="thumbnailImgView" destination="DMT-xt-F1V" id="6eU-nE-zP4"/>
                 <outlet property="titleLbl" destination="3Qn-r4-3Rw" id="C2G-GX-BdO"/>
             </connections>

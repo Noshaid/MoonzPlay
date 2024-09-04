@@ -11,10 +11,15 @@ class EpisodeCell: UITableViewCell {
 
     @IBOutlet weak var thumbnailImgView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var downloadBtn: UIButton!
+    @IBOutlet weak var downloadLoader: UIActivityIndicatorView!
+    
+    var videoDownloaded: ((Bool) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        downloadLoader.isHidden = true
     }
     
     func setData(episode: Episode?) {
@@ -26,7 +31,18 @@ class EpisodeCell: UITableViewCell {
     }
     
     @IBAction func dowloadVideoAction(_ sender: Any) {
-        DownloadManager.shared.downloadAndSaveVideo()
+        downloadLoader.isHidden = false
+        downloadLoader.startAnimating()
+        downloadBtn.isHidden = true
+        DownloadManager.shared.downloadAndSaveVideo { [weak self] status in
+            DispatchQueue.main.async {
+                self?.downloadLoader.isHidden = true
+                self?.downloadBtn.isHidden = false
+                if status {
+                    self?.videoDownloaded?(status)
+                }
+            }
+        }
     }
     
     /*

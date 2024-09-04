@@ -8,44 +8,52 @@
 import Foundation
 import UIKit
 import Photos
-import Alamofire
 
 class DownloadManager {
     
     static let shared = DownloadManager()
-    private let videoURL = _SAMPLE_VIDEO_URL
+    private let videoURL = _SAMPLE_LIGHTWEIGHT_VIDEO_URL
     
     private init() {}
     
-    func downloadAndSaveVideo() {
-        let url = URL(string: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4")!
-        AF.download(url).downloadProgress { progress in
-            DispatchQueue.main.async {
-                print("Download Progress: \(progress.fractionCompleted * 100)%")
+    func downloadAndSaveVideo(compeletion: @escaping (Bool) -> Void) {
+        let url = URL(string: videoURL)!
+        
+        URLSession.shared.downloadTask(with: url) { [weak self] (location, response, error) in
+            guard let location = location, error == nil else {
+                print("Error downloading video: \(String(describing: error))")
+                compeletion(false)
+                return
             }
-        }.responseURL { response in
-            if let tempURL = response.fileURL {
-                PHPhotoLibrary.requestAuthorization { status in
-                    if status == .authorized {
-                        self.saveVideoToGallery(from: tempURL)
-                    } else {
-                        print("Permission denied to access the photo library")
-                    }
-                }
-            } else if let error = response.error {
-                print("Error downloading video: \(error.localizedDescription)")
-            }
-        }
-    }
 
-    func saveVideoToGallery(from url: URL) {
+            // Move the downloaded file to a temporary location
+            let fileManager = FileManager.default
+            let destinationURL = fileManager.temporaryDirectory.appendingPathComponent(response?.suggestedFilename ?? url.lastPathComponent)
+
+            do {
+                // Remove any existing file if any
+                if fileManager.fileExists(atPath: destinationURL.path) {
+                    try fileManager.removeItem(at: destinationURL)
+                }
+                try fileManager.moveItem(at: location, to: destinationURL)
+                self?.saveVideoInGallery(url: destinationURL, compeletion: compeletion)
+            } catch {
+                print("Error moving file: \(error)")
+                compeletion(false)
+            }
+        }.resume()
+    }
+    
+    private func saveVideoInGallery(url: URL, compeletion: @escaping (Bool) -> Void) {
         PHPhotoLibrary.shared().performChanges({
             PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
-        }) { saved, error in
-            if saved {
-                print("Video saved successfully to gallery")
+        }) { success, error in
+            if success {
+                print("Video saved to gallery successfully!")
+                compeletion(true)
             } else {
-                print("Error saving video to gallery: \(error?.localizedDescription ?? "error")")
+                print("Error saving video to gallery: \(String(describing: error))")
+                compeletion(false)
             }
         }
     }

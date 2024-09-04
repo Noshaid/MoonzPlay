@@ -88,6 +88,14 @@ class TVShowViewController: UIViewController {
         let videoPlayerVC = VideoPlayerViewController(videoURL: url)
         self.present(videoPlayerVC, animated: true, completion: nil)
     }
+    
+    private func showVideoSavedPopup(status: Bool) {
+        let title = status ? "Success" : "Error"
+        let message = status ? "The video has been saved to your gallery." : "Error saving video to gallery"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: TableView Deletgate and Datasource
@@ -129,6 +137,9 @@ extension TVShowViewController: UITableViewDelegate, UITableViewDataSource {
             default:
                 let episodeCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell") as! EpisodeCell
                 episodeCell.setData(episode: tvShowViewModel.season?.episodes?[indexPath.row])
+                episodeCell.videoDownloaded = { [weak self] status in
+                    self?.showVideoSavedPopup(status: status)
+                }
                 cell = episodeCell
         }
         
