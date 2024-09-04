@@ -12,18 +12,12 @@ class EpisodeCell: UITableViewCell {
     @IBOutlet weak var thumbnailImgView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     
-    var episode: Episode? {
-        didSet {
-            setData()
-        }
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    private func setData() {
+    func setData(episode: Episode?) {
         titleLbl.text = "E\(episode?.episode_number ?? 0) - \(episode?.name ?? "")"
         if let stillPath = episode?.still_path {
             let thumbnailUrlURL = URL(string: "\(_IMAGE_BASE_URL)\(stillPath)")

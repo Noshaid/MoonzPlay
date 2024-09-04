@@ -111,7 +111,7 @@ extension TVShowViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
             case 0:
                 let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderView") as! HeaderView
-                headerCell.tvShow = tvShowViewModel.tvShow
+                headerCell.setData(tvShow: tvShowViewModel.tvShow)
                 headerCell.playVideo = {
                     [weak self] in
                     self?.showVideoPlayerViewController()
@@ -119,8 +119,7 @@ extension TVShowViewController: UITableViewDelegate, UITableViewDataSource {
                 cell = headerCell
             case 1:
                 let seasonsCollectionViewCell = tableView.dequeueReusableCell(withIdentifier: "SeasonsCollectionViewCell") as! SeasonsCollectionViewCell
-                seasonsCollectionViewCell.numberOfSeasons = tvShowViewModel.tvShow?.number_of_seasons ?? 0
-                seasonsCollectionViewCell.currentSelectedSeason = tvShowViewModel.currentSelectedSeason
+                seasonsCollectionViewCell.setData(numberOfSeasons: tvShowViewModel.tvShow?.number_of_seasons, currentSelectedSeason: tvShowViewModel.currentSelectedSeason)
                 seasonsCollectionViewCell.getSelectedSeasonEpisode = {
                     [weak self] seasonNumber in
                     self?.tvShowViewModel.updateSelectedSeason(seasonNumber: seasonNumber)
@@ -129,7 +128,7 @@ extension TVShowViewController: UITableViewDelegate, UITableViewDataSource {
                 cell = seasonsCollectionViewCell
             default:
                 let episodeCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell") as! EpisodeCell
-                episodeCell.episode = tvShowViewModel.season?.episodes?[indexPath.row]
+                episodeCell.setData(episode: tvShowViewModel.season?.episodes?[indexPath.row])
                 cell = episodeCell
         }
         

@@ -11,12 +11,8 @@ class SeasonsCollectionViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var numberOfSeasons: Int? {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
-    var currentSelectedSeason = 1
+    private var numberOfSeasons: Int?
+    private var currentSelectedSeason = 1
     var getSelectedSeasonEpisode: ((Int) -> Void)?
     
     override func awakeFromNib() {
@@ -24,6 +20,12 @@ class SeasonsCollectionViewCell: UITableViewCell {
         // Initialization code
         
         setupCollectionView()
+    }
+    
+    func setData(numberOfSeasons: Int?, currentSelectedSeason: Int) {
+        self.numberOfSeasons = numberOfSeasons
+        self.currentSelectedSeason = currentSelectedSeason
+        collectionView.reloadData()
     }
     
     private func setupCollectionView() {
@@ -56,10 +58,8 @@ extension SeasonsCollectionViewCell: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeasonCell", for: indexPath) as! SeasonCell;
-        cell.seasonNumber = indexPath.item + 1
-        cell.isSeasonSelected = currentSelectedSeason == indexPath.item + 1
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeasonCell", for: indexPath) as! SeasonCell
+        cell.setData(seasonNumber: indexPath.item + 1, isSeasonSelected: currentSelectedSeason == indexPath.item + 1)
         return cell
     }
     

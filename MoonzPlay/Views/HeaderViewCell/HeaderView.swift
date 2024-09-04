@@ -20,12 +20,6 @@ class HeaderView: UITableViewCell {
     private var isExpanded = false
     var playVideo: (() -> Void)?
     
-    var tvShow: TVShow? {
-        didSet {
-            setData()
-        }
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,7 +27,7 @@ class HeaderView: UITableViewCell {
         setupGradientBackground()
     }
     
-    private func setData() {
+    func setData(tvShow: TVShow?) {
         nameLbl.text = "\(tvShow?.name ?? "Season Name")"
         shortInfoLbl.text = "\(tvShow?.firstAirDate ?? "")  |  \(tvShow?.number_of_seasons ?? 0) Seasons  |  R"
         descriptionLbl.text = "\(tvShow?.overview ?? "")"

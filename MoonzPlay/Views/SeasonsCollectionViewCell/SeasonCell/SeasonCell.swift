@@ -13,22 +13,16 @@ class SeasonCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var selectedView: UIView!
     
-    var seasonNumber: Int? {
-        didSet {
-            title.text = "SEASON \(seasonNumber ?? 0)"
-            separator.isHidden = seasonNumber == 1
-        }
-    }
-    
-    var isSeasonSelected: Bool? {
-        didSet {
-            if isSeasonSelected == true {
-                selectedView.isHidden = false
-                title.textColor = .white
-            } else {
-                selectedView.isHidden = true
-                title.textColor = .greyTextColor
-            }
+    func setData(seasonNumber: Int?, isSeasonSelected: Bool?) {
+        title.text = "SEASON \(seasonNumber ?? 0)"
+        separator.isHidden = seasonNumber == 1
+        
+        if isSeasonSelected == true {
+            selectedView.isHidden = false
+            title.textColor = .white
+        } else {
+            selectedView.isHidden = true
+            title.textColor = .greyTextColor
         }
     }
     
